@@ -1,29 +1,32 @@
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: lightgray; /* Light background for contrast */
-    color: #333333; /* Darker text for readability */
+    background-color: lightgray;
+    color: #333;
 }
 
+/* Header Styles */
 header {
-    background: #333333;
+    background: #333;
     color: white;
     padding: 30px 0;
     text-align: center;
-    position: relative; /* Enable absolute positioning of the logo */
+    position: relative;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
-    position: absolute; /* Position logo absolutely within the header */
-    top: 20px; /* Adjust this value as needed to align with header text */
-    right: 20px; /* Adjust this value as needed */
-    max-width: 150px; /* Limit logo size */
-    height: auto; /* Maintain aspect ratio */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    max-width: 150px;
+    height: auto;
 }
 
+/* Navigation Menu */
 nav ul {
     list-style: none;
     padding: 0;
@@ -37,32 +40,44 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-weight: bold; /* Make links bold */
-    transition: color 0.3s; /* Smooth transition for hover effect */
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: gold; /* Westwood gold */
+    color: gold;
 }
 
+/* Footer Styles */
 footer {
-    background: #333333;
+    background: #333;
     color: white;
     text-align: center;
     padding: 15px 0;
-    position: relative; /* Adjust to flow with content */
+    position: relative;
     bottom: 0;
     width: 100%;
 }
 
+/* Main Content Area */
 main {
     padding: 20px;
-    margin-bottom: 40px; /* Space for the footer */
+    margin-bottom: 40px;
 }
 
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Typography */
 h2 {
-    color: #333333;
-    border-bottom: 3px solid gold; /* Westwood gold underline for headings */
+    color: #333;
+    border-bottom: 3px solid gold;
     padding-bottom: 10px;
 }
 
@@ -71,32 +86,24 @@ p {
 }
 
 a {
-    color: blue; /* Dark blue links */
+    color: blue;
 }
 
 a:hover {
-    color: gold; /* Westwood gold on hover */
+    color: gold;
 }
 
-.container {
-    max-width: 800px; /* Center content and limit width */
-    margin: 0 auto; /* Center horizontally */
-    padding: 20px;
-    background: white; /* White background for content area */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    border-radius: 8px; /* Rounded corners */
-}
-
-
-/* Styles for the form elements */
+/* Form Styles */
 form {
     max-width: 600px;
     margin: 0 auto;
 }
 
-input[type="text"], input[type="email"], textarea {
-    width: 100%;  /* Full width */
-    padding: 15px;  /* Larger padding for better usability */
+input[type="text"], 
+input[type="email"], 
+textarea {
+    width: 100%;
+    padding: 15px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -104,21 +111,21 @@ input[type="text"], input[type="email"], textarea {
 }
 
 textarea {
-    height: 200px;  /* Larger height for the message box */
-    resize: vertical;  /* Allow users to adjust height */
+    height: 200px;
+    resize: vertical;
 }
 
+/* Button Styles */
 button {
     padding: 15px 30px;
     font-size: 1.2em;
     border: none;
     border-radius: 5px;
-    background-color: #4CAF50;
+    background-color: green;
     color: white;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: limegreen;
 }
-
