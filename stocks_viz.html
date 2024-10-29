@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Stock Chart</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+  <h1>Stock Data Visualization</h1>
+
+  <label for="stock-select">Select Stocks:</label>
+  <select id="stock-select" multiple>
+    <!-- Stock options will be dynamically populated -->
+  </select>
+
+  <label for="metric-select">Select Metric:</label>
+  <select id="metric-select">
+    <option value="Price">Price</option>
+    <option value="Return">Return</option>
+    <option value="Volume">Volume</option>
+  </select>
+
+  <label for="timeframe-select">Select Timeframe:</label>
+  <select id="timeframe-select">
+    <option value="daily">Daily</option>
+    <option value="weekly">Weekly</option>
+    <option value="monthly">Monthly</option>
+  </select>
+
+  <svg width="900" height="500"></svg>
+
+  <script src="stocks_viz.js"></script>
+</body>
+</html>
