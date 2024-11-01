@@ -1,0 +1,151 @@
+/* General Layout */
+.plot-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    background-color: #f2f4f8;
+}
+
+/* Controls Section */
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 220px;
+    padding: 15px;
+    border: 1px solid #b0b0b0;
+    border-radius: 8px;
+    background: #ccc;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), inset 1px 1px 3px rgba(255, 255, 255, 0.6);
+    transition: box-shadow 0.3s;
+}
+
+.controls:hover {
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15), inset 1px 1px 4px rgba(255, 255, 255, 0.7);
+}
+
+/* Legend Section */
+#legend-container {
+    align-self: center;
+    height: 200px;
+    padding: 5px;
+    overflow-y: auto;
+    border: 1px solid #b0b0b0;
+    border-radius: 8px;
+    background: #ccc;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), inset 1px 1px 3px rgba(255, 255, 255, 0.6);
+}
+
+/* Small, minimal scrollbar styling for #legend-container */
+#legend-container::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+#legend-container::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 5px;
+}
+
+#legend-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+}
+
+#legend-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+#legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 8px;
+}
+
+#legend text {
+    font-size: 14px;
+    color: #333;
+    margin-left: 15px;
+}
+
+/* Asset Selection Options */
+
+/* Small, minimal scrollbar styling for #asset-select */
+#asset-select::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+#asset-select::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 5px;
+}
+
+#asset-select::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+}
+
+#asset-select::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+#asset-select {
+    display: flex;
+    flex-direction: column;
+    max-height: 400px;
+    padding: 5px;
+    overflow-y: auto;
+}
+
+.asset-option {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    width: 100%;
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+    border-radius: 4px;
+    background: linear-gradient(to right, #f9f9f9, #e0f7ff);
+}
+
+.asset-option:hover {
+    background-color: #d4edff;
+    transform: translateY(-1px);
+}
+
+.asset-option label {
+    font-size: 0.9rem;
+    color: #333;
+    flex-grow: 1;
+}
+
+/* Tooltip Styling */
+.tooltip {
+    position: absolute;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    color: #333;
+    background-color: #ffffff;
+    border: 1px solid #999;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), inset 1px 1px 5px rgba(255, 255, 255, 0.3);
+    z-index: 1000;
+}
+
+/* Additional Info Text */
+.data-info {
+    text-align: center;
+    font-size: 0.9rem;
+    margin: 10px 0;
+    color: #555;
+}
+
+/* Custom Cursors */
+.cross-cursor {
+    cursor: crosshair;
+}
