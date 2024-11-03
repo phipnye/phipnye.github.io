@@ -1,1 +1,6 @@
+scripts/*
+*.csv
 *.py
+*.R
+*.r
+.mypy_cache/*
