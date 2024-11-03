@@ -26,6 +26,7 @@ p {
 
 a {
     color: blue;
+    text-decoration: none;
 }
 
 a:hover {
@@ -63,13 +64,8 @@ nav ul li {
 
 nav ul li a {
     color: white;
-    text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: gold;
 }
 
 /* Footer */
@@ -104,8 +100,8 @@ form {
     margin: 0 auto;
 }
 
-input[type="text"], 
-input[type="email"], 
+input[type="text"],
+input[type="email"],
 textarea {
     width: 100%;
     padding: 15px;
@@ -135,36 +131,66 @@ button:hover {
     background-color: limegreen;
 }
 
-/* Basic layout for the plot-rows and images */
+/* Plot and Image Layout */
 .plot-row {
     display: flex;
-    gap: 20px; /* Spacing between images */
+    gap: 20px;
     justify-content: center;
     margin: 20px 0;
 }
+
 .image-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     width: 500px;
-    border: 1px solid #ccc; /* Light border around images */
+    border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease;
     overflow: hidden;
 }
+
 .image-container:hover {
     transform: scale(1.05);
 }
+
 .image-container img {
     width: 100%;
     height: auto;
     cursor: pointer;
-    border-bottom: 1px solid #ddd; /* Light border separating label */
+    border-bottom: 1px solid #ddd;
 }
+
 .image-label {
     padding: 10px;
     font-size: 0.9rem;
     color: #333;
+}
+
+/* Styles for the Image Display */
+.image-display {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-display img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Additional Info Text */
+.data-info {
+    text-align: center;
+    font-size: 0.9rem;
+    margin: 10px 0;
+    color: #555;
 }

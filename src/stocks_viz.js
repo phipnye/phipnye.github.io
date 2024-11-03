@@ -1,5 +1,5 @@
 // Wait for the DOM to fully load before executing the script
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // Select HTML elements
     const typeSelect = d3.select("#type-select");
     const assetSelect = d3.select("#asset-select");
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Append axes groups
     const xAxis = svg.append("g").attr("transform", `translate(0, ${height - margin.bottom})`);
     const yAxis = svg.append("g").attr("transform", `translate(${margin.left}, 0)`);
-    
+
     // Create tooltip for displaying data on hover
     const tooltip = d3.select("body").append("div").attr("class", "tooltip");
 
@@ -105,13 +105,13 @@ document.addEventListener("DOMContentLoaded", function() {
         // Fetch data from the server
         d3.json(dataLink)
             .then(data => {
-            rawData = data;
-            populateAssetSelect(rawData);
-            updateChart();
+                rawData = data;
+                populateAssetSelect(rawData);
+                updateChart();
             })
             .catch(error => {
-            console.error("Error loading data:", error);
-        });
+                console.error("Error loading data:", error);
+            });
     }
 
     /**
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 .attr("id", `${selectedAssetType}-${asset}`)
                 .attr("value", asset)
                 .on("change", updateChart);
-            
+
             assetOption.append("label")
                 .attr("for", `${selectedAssetType}-${asset}`)
                 .text(asset);
@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const assetData = chartData[asset];
             const line = lineGen(assetData, xScale);
             const lineColor = colorScale(asset);
-            const attachData = {data: assetData, asset};
+            const attachData = { data: assetData, asset };
 
             // Create the line for the asset
             svg.append("path")
@@ -331,7 +331,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function zoomed(event) {
         // Rescale the x-axis based on the zoom transformation
         const xScaleNew = event.transform.rescaleX(xScale);
-    
+
         // Gather visible data points within the new x-domain
         const visibleData = Object.keys(chartData).flatMap(asset => {
             const xDomain = xScaleNew.domain();
@@ -380,7 +380,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Update axes with the new scales
         xAxis.call(xAxisGen, xScaleNew);
-        
+
         if (metricSelect.node().value === "Return") {
             yAxis.call(yAxisGenReturns, yScale);
         } else {
@@ -400,10 +400,10 @@ document.addEventListener("DOMContentLoaded", function() {
         const { data: assetData, asset } = d;
         const [xPos] = d3.pointer(event, svg.node());
         const date = scale.invert(xPos);
-    
+
         let closestData = null;
         let closestDistance = Infinity;
-    
+
         // Find the closest data point in the asset data for the hovered line
         assetData.forEach(entry => {
             const distance = Math.abs(entry.date - date);
@@ -412,19 +412,19 @@ document.addEventListener("DOMContentLoaded", function() {
                 closestData = entry;
             }
         });
-    
+
         // Change cursor to crosshair when hovering
         svg.classed("cross-cursor", true);
-    
+
         // Position tooltip and its content
         if (closestData) {
             const dateString = closestData.date.toISOString().slice(0, 10);
             const metricString = selectedMetric === "Price" ?
                 `$${closestData.metric.toFixed(2)}` :
                 selectedMetric === "Volume" ?
-                Intl.NumberFormat().format(closestData.metric) :
-                `${(closestData.metric * 100).toFixed(2)}%`;
-    
+                    Intl.NumberFormat().format(closestData.metric) :
+                    `${(closestData.metric * 100).toFixed(2)}%`;
+
             tooltip.style("display", "block")
                 .html(`<strong>${capitalizeFirstLetter(selectedAssetType)}</strong>: ${asset}<br><strong>Date</strong>: ${dateString}<br><strong>${selectedMetric}</strong>: ${metricString}`)
                 .style("left", (event.pageX + 20) + "px")
@@ -439,6 +439,6 @@ document.addEventListener("DOMContentLoaded", function() {
     function capitalizeFirstLetter(word) {
         return word.charAt(0).toUpperCase() + word.slice(1);
     }
-    
+
     loadAndRenderData();
 });

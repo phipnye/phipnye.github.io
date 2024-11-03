@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/styles.css">
+    <link rel="stylesheet" href="/src/countries_viz.css">
+    <title>Country Data Globe Visualization</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Nye Data Consulting</h1>
+        <img src="/img/logo.svg" alt="Nye Data Consulting Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="/src/about.html">About</a></li>
+                <li><a href="/src/pricing.html">Pricing</a></li>
+                <li><a href="/src/contact.html">Contact</a></li>
+                <li><a href="/src/visualizations.html">Visualizations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="plot-container">
+            <svg id="chart" width="1100" height="600"></svg>
+        </div>
+
+        <!-- Additional statement about the data reflected in the visualization -->
+        <div class="data-info">
+            <p>This interactive globe visualization provides key data on country-specific attributes that reflect
+                economic, social, and environmental aspects across the globe. Users can explore metrics such as
+                population, GDP, surface area, forested area, life expectancy for both males and females, homicide
+                rates, unemployment, and internet usage by hovering over each country. These insights enable a closer
+                look at regional trends and global patterns that impact development and quality of life. The data is
+                sourced from the latest available resources, offering a well-rounded snapshot of global conditions.</p>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Nye Data Consulting. All rights reserved.</p>
+    </footer>
+
+    <script src="/src/countries_viz.js"></script>
+</body>
+
+</html>
