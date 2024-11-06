@@ -12,10 +12,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Define color scale for chart lines
     const customColors = [
-        '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf',
-        '#aec7e8', '#ffbb78', '#98df8a', '#ff9896', '#c5b0d5', '#c49c94', '#f7b6d2', '#c7c7c7', '#dbdb8d', '#9edae5',
-        '#393b79', '#5254a3', '#6b6ecf', '#9c9ede', '#637939', '#8ca252', '#b5cf6b', '#cedb9c', '#8c6d31', '#bd9e39',
-        '#e7ba52', '#e7cb94', '#843c39', '#ad494a', '#d6616b', '#e7969c', '#7b4173', '#a55194', '#ce6dbd', '#de9ed6'
+        "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf",
+        "#aec7e8", "#ffbb78", "#98df8a", "#ff9896", "#c5b0d5", "#c49c94", "#f7b6d2", "#c7c7c7", "#dbdb8d", "#9edae5",
+        "#393b79", "#5254a3", "#6b6ecf", "#9c9ede", "#637939", "#8ca252", "#b5cf6b", "#cedb9c", "#8c6d31", "#bd9e39",
+        "#e7ba52", "#e7cb94", "#843c39", "#ad494a", "#d6616b", "#e7969c", "#7b4173", "#a55194", "#ce6dbd", "#de9ed6"
     ];
     const colorScale = d3.scaleOrdinal(customColors);
 
@@ -93,6 +93,8 @@ document.addEventListener("DOMContentLoaded", function () {
         selectedAssetType = typeSelect.node().value.toLowerCase().replace(/s$/, "");
         const dataLink = `/data/${selectedAssetType}s_data.json`;
 
+        d3.select(".asset-selection").select("label").text(`Select ${capitalizeFirstLetter(selectedAssetType)}(s)`)
+
         // Modify the width of the legend according to the selected asset type
         if (selectedAssetType === "sector") {
             d3.select("#legend").attr("width", 180).attr("height", 180);
@@ -125,15 +127,16 @@ document.addEventListener("DOMContentLoaded", function () {
         // Create checkbox options for each unique asset
         uniqueAssets.forEach(asset => {
             const assetOption = assetSelect.append("div").attr("class", "asset");
+            const idLabel = `${selectedAssetType}-${asset}`;
 
             assetOption.append("input")
                 .attr("type", "checkbox")
-                .attr("id", `${selectedAssetType}-${asset}`)
+                .attr("id", idLabel)
                 .attr("value", asset)
                 .on("change", updateChart);
 
             assetOption.append("label")
-                .attr("for", `${selectedAssetType}-${asset}`)
+                .attr("for", idLabel)
                 .text(asset);
         });
     }
