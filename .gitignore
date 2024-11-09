@@ -1,6 +1,7 @@
 scripts/*
 *.csv
-*.py
-*.R
-*.r
+*.xlsx
+*.txt
 .mypy_cache/*
+*/countries-110m.json
+*/screenshot/*

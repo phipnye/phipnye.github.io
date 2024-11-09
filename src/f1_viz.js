@@ -173,7 +173,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     upperLapTime: d.avg_lap_time + d.sd_lap_time,
                     minLapTime: d.min_lap_time,
                     maxLapTime: d.max_lap_time,
-                    nLaps: d.n_laps
+                    nLaps: d.n_laps,
+                    otherEntites: d.other_entities
                 }));
 
                 if (entityData.length > 0) {
@@ -317,7 +318,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     .attr("d", entityLine);
 
                 // Add data points
-                // Draw circles for each data point
+                const otherEntityType = selectedEntityType === "driver" ? "Constuctor" : "Drivers"
                 subplot.selectAll(`.data-point-${entityCleaned}`)
                     .data(entityData)
                     .enter()
@@ -331,6 +332,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         tooltip.style("display", "block")
                             .html(`
                             <strong>${entity}</strong><br>
+                            ${otherEntityType}: ${d.otherEntites}<br>
                             Year: ${d.raceYear}<br>
                             Avg. Lap Time: ${d.avgLapTime.toFixed(3)}<br>
                             Std. Deviation: ${(d.avgLapTime - d.lowerLapTime).toFixed(3)}<br>

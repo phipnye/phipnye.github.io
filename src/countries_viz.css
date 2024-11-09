@@ -5,11 +5,6 @@
     justify-content: center;
 }
 
-svg {
-    height: 100%;
-    width: 100%;
-}
-
 .tooltip {
     background: rgba(0, 0, 0, 0.75);
     border-radius: 4px;
@@ -19,4 +14,9 @@ svg {
     padding: 8px;
     pointer-events: none;
     position: absolute;
+}
+
+svg {
+    height: 100%;
+    width: 100%;
 }
