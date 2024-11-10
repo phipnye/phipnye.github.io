@@ -23,21 +23,28 @@
         </nav>
     </header>
 
-    <!-- Static Plots Section -->
-    <h2>Static Plots</h2>
+    <h2>Plot Gallery</h2>
+
+    <p class="promotion-text">Bring your data to life with Nye Data Consulting. Whether you need static visuals or
+        dynamic, interactive dashboards, I specialize in transforming raw data into clear, impactful visualizations that
+        tell a compelling story. Explore my project gallery for inspiration, or reach out with your own ideas. Let’s
+        work together to create stunning, tailored visualizations that communicate your insights effectively and
+        captivate your audience.</p>
+
+    <h3 style="text-align: center;">Static Plots</h3>
     <div class="plot-row-container">
         <div class="plot-row" id="static-plots">
-            <a href="/src/meat_life_exp.html" class="image-container">
-                <img src="/img/thumbnail/meat_life_exp.svg" alt="Meat Consumption vs. Life Expectancy Analysis">
-                <div class="image-label">Meat Consumption vs. Life Expectancy Analysis</div>
+            <a href="/src/sat_scores.html" class="image-container">
+                <img src="/img/thumbnail/sat_scores.svg" alt="SAT Score Trends">
+                <div class="image-label">SAT Score Trends</div>
             </a>
             <a href="/src/cell_phone_usage.html" class="image-container">
                 <img src="/img/thumbnail/cell_phone_usage.svg" alt="Urban Cell Phone Use">
                 <div class="image-label">Urban Cell Phone Use</div>
             </a>
-            <a href="/src/sat_scores.html" class="image-container">
-                <img src="/img/thumbnail/sat_scores.svg" alt="SAT Score Trends">
-                <div class="image-label">SAT Score Trends</div>
+            <a href="/src/meat_life_exp.html" class="image-container">
+                <img src="/img/thumbnail/meat_life_exp.svg" alt="Meat Consumption vs. Life Expectancy Analysis">
+                <div class="image-label">Meat Consumption vs. Life Expectancy Analysis</div>
             </a>
             <a href="/src/stocks_corr.html" class="image-container">
                 <img src="/img/thumbnail/stocks_corr.svg" alt="Stocks Correlation Analysis">
@@ -48,8 +55,7 @@
         <div class="arrow arrow-right" onclick="moveSlide('static-plots', 1)">&#10095;</div>
     </div>
 
-    <!-- Interactive Plots Section -->
-    <h2>Interactive Plots</h2>
+    <h3 style="text-align: center;">Interactive Plots</h3>
     <div class="plot-row-container">
         <div class="plot-row" id="interactive-plots">
             <a href="/src/advertising_regression.html" class="image-container">
@@ -79,7 +85,6 @@
     </footer>
 
     <script>
-        // Keeps track of the current position for each plot row
         const slideIndex = {
             'static-plots': 0,
             'interactive-plots': 0
@@ -88,15 +93,11 @@
         function moveSlide(id, direction) {
             const plotRow = document.getElementById(id);
             const plotRowContainer = plotRow.parentElement;
-            const imageWidth = plotRowContainer.clientWidth / 3;  // Width of one image-container (1/3 of container)
-            const totalPlots = plotRow.children.length;
             const visiblePlots = 3;
+            const imageWidth = plotRowContainer.clientWidth / visiblePlots;
+            const totalPlots = plotRow.children.length;
             const maxSlides = totalPlots - visiblePlots;
-
-            // Update slide index, clamping within range
             slideIndex[id] = Math.max(0, Math.min(maxSlides, slideIndex[id] + direction));
-
-            // Calculate the translateX value for the offset
             const offset = -slideIndex[id] * imageWidth;
             plotRow.style.transform = `translateX(${offset}px)`;
         }
