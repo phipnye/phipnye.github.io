@@ -1,0 +1,7 @@
+scripts/*
+*.csv
+*.xlsx
+*.txt
+.mypy_cache/*
+*/countries-110m.json
+*/screenshot/*

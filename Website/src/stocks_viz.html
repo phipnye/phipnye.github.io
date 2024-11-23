@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/styles.css">
+    <link rel="stylesheet" href="/src/stocks_viz.css">
+    <title>DJIA Performance</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Nye Data Consulting</h1>
+        <img src="/img/logo.svg" alt="Nye Data Consulting Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/src/about.html">About</a></li>
+                <li><a href="/src/services.html">Services</a></li>
+                <li><a href="/src/contact.html">Contact</a></li>
+                <li><a href="/src/visualizations.html">Visualizations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="plot-container">
+            <div class="controls">
+                <div class="selection-container">
+                    <div>
+                        <label for="type-select">View By:</label>
+                        <select id="type-select">
+                            <option value="Stocks">Stocks</option>
+                            <option value="Sectors">Sectors</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="metric-select">Select Metric:</label>
+                        <select id="metric-select">
+                            <option value="Price">Price</option>
+                            <option value="Return">Return</option>
+                            <option value="Volume">Volume</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="asset-selection">
+                    <label>Select Assets:</label>
+                    <div id="asset-select"></div>
+                </div>
+            </div>
+
+            <svg id="chart" width="1100" height="600"></svg>
+
+            <div id="legend-container">
+                <svg id="legend"></svg>
+            </div>
+        </div>
+
+        <div class="plot-info">
+            <p>This plot presents data on the stocks and sectors represented in the Dow Jones Industrial Average (DJIA),
+                reflecting insights derived from historical performance spanning the years 1962 to 2023, as of October
+                31, 2024.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Nye Data Consulting. All rights reserved.</p>
+    </footer>
+
+    <script src="/src/stocks_viz.js"></script>
+</body>
+
+</html>

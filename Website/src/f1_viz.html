@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/styles.css">
+    <link rel="stylesheet" href="/src/f1_viz.css">
+    <title>Formula 1 Lap Times</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Nye Data Consulting</h1>
+        <img src="/img/logo.svg" alt="Nye Data Consulting Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/src/about.html">About</a></li>
+                <li><a href="/src/services.html">Services</a></li>
+                <li><a href="/src/contact.html">Contact</a></li>
+                <li><a href="/src/visualizations.html">Visualizations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="plot-container">
+            <div class="controls">
+                <div class="selection-container">
+                    <div>
+                        <label for="type-select">View By:</label>
+                        <select id="type-select">
+                            <option value="Drivers">Drivers</option>
+                            <option value="Constructors">Constructors</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="entity-selection">
+                    <label>Select Entity:</label>
+                    <div id="entity-select"></div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <svg id="chart"></svg>
+            </div>
+
+            <div id="legend-container">
+                <svg id="legend"></svg>
+            </div>
+        </div>
+
+        <div class="plot-info">
+            <p>This visualization showcases Formula 1 race performance data from 1996 to 2024, excluding the 70th
+                Anniversary, Argentine, Eifel, Indian, Korean, Las Vegas, Luxembourg, Sakhir, San Marino, Styrian, and
+                Tuscan Grand Prix events. It focuses on completed laps that were unaffected by safety cars, spins, or
+                other race incidents, using data from drivers and constructors who participated in at least 30 races.
+                The analysis calculates key metrics, including average lap times, fastest laps, and driver consistency,
+                ensuring that only laps run under normal race conditions are considered. Bands around the data points
+                represent the average lap time (in minutes) for each driver or constructor, plus or minus one standard
+                deviation. Time series trend curves were generated using a cubic spline that preserves monotonicity in
+                the y-axis with continuous first-order derivatives, passing through all data points without introducing
+                spurious oscillations.</p>
+        </div>
+    </main>
+
+
+    <footer>
+        <p>&copy; 2024 Nye Data Consulting. All rights reserved.</p>
+    </footer>
+
+    <script src="/src/f1_viz.js"></script>
+</body>
+
+</html>

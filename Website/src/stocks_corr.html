@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/styles.css">
+    <title>Stocks Correlation Analysis</title>
+</head>
+
+<body>
+    <header>
+        <h1>Nye Data Consulting</h1>
+        <img src="/img/logo.svg" alt="Nye Data Consulting Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/src/about.html">About</a></li>
+                <li><a href="/src/services.html">Services</a></li>
+                <li><a href="/src/contact.html">Contact</a></li>
+                <li><a href="/src/visualizations.html">Visualizations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="image-display">
+            <img src="/img/static/stocks_corr.svg" alt="Exponentially Weighted Correlation Matrix of Selected Stocks">
+        </div>
+
+        <div class="plot-info">
+            <p>This analysis presents an exponentially weighted correlation matrix of 25 major stocks from various
+                sectors, offering insights into their recent co-movement patterns. By sourcing daily historical prices
+                from Yahoo Finance and focusing on adjusted closing prices, we prioritized data consistency. The
+                exponentially weighted covariance matrix was computed using an optimal span determined by minimizing the
+                L2 norm against recent data, a choice that emphasizes current market trends over historical averages.
+                The resulting covariance matrix was then normalized to a correlation matrix by dividing each entry by
+                the product of the exponentially weighted standard deviations for each stock, thereby retaining the
+                focus on recent dynamics. This color-coded correlation matrix uses darker hues to indicate stronger
+                correlations, positive or negative, revealing how stocks have recently interacted in response to market
+                changes. Analysts can use this to identify pairs of stocks that move together for hedging strategies or
+                diverge for diversification. By focusing on recent movements, this exponentially weighted approach
+                allows investors to make more informed portfolio decisions based on up-to-date relationships among
+                stocks, adapting to shifts in market conditions with greater agility.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Nye Data Consulting. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

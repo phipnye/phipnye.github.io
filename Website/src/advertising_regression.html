@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/styles.css">
+    <title>Advertising Regression Analysis</title>
+</head>
+
+<body>
+    <header>
+        <h1>Nye Data Consulting</h1>
+        <img src="/img/logo.svg" alt="Nye Data Consulting Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/src/about.html">About</a></li>
+                <li><a href="/src/services.html">Services</a></li>
+                <li><a href="/src/contact.html">Contact</a></li>
+                <li><a href="/src/visualizations.html">Visualizations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="image-display">
+            <object data="/src/advertising_3d_plot.html" type="text/html" height="800px" width="100%"></object>
+        </div>
+
+        <div class="display-container">
+            <div class="image-display">
+                <img src="/img/static/advertising_static_plot.svg" alt="Advertising Static Plot">
+            </div>
+
+            <div class="table-container">
+                <table style='border-spacing: 5px 0;'>
+                    <caption>Multiple Linear Regression Analyzing the Effect of Advertising on Sales</caption>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 3px;" colspan='2'>
+                                <hr style='margin: 0.1px'>
+                                <hr style='margin: 0.1px;'>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 3px;">(Intercept)</td>
+                            <td style="padding: 3px;" style='text-align: center;'>0.364653<sup
+                                    style="color: #f80053;">*</sup></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 3px;"></td>
+                            <td style="padding: 3px;" style='text-align: center;'>(0.212242)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 3px;">TV</td>
+                            <td style="padding: 3px;" style='text-align: center;'>0.002901</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 3px;"></td>
+                            <td style="padding: 3px;" style='text-align: center;'>(0.002203)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 3px;">Radio</td>
+                            <td style="padding: 3px;" style='text-align: center;'>0.046434<sup
+                                    style="color: #f80053;">***</sup></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 3px;"></td>
+                            <td style="padding: 3px;" style='text-align: center;'>(0.002908)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 3px;">TV<sup>2</sup></td>
+                            <td style="padding: 3px;" style='text-align: center;'>-0.000006</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 3px;"></td>
+                            <td style="padding: 3px;" style='text-align: center;'>(0.000005)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 3px;">log(TV)</td>
+                            <td style="padding: 3px;" style='text-align: center;'>1.876490<sup
+                                    style="color: #f80053;">***</sup></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 3px;"></td>
+                            <td style="padding: 3px;" style='text-align: center;'>(0.074863)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 3px;">TV * Radio</td>
+                            <td style="padding: 3px;" style='text-align: center;'>0.001020<sup
+                                    style="color: #f80053;">***</sup></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 3px;"></td>
+                            <td style="padding: 3px;" style='text-align: center;'>(0.000017)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 3px;" colspan='2'>
+                                <hr style='margin: 0.5px'>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 3px;">AIC</td>
+                            <td style="padding: 3px;" style='text-align: center;'>98.854463</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 3px;">BIC</td>
+                            <td style="padding: 3px;" style='text-align: center;'>121.942685</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 3px;">CV</td>
+                            <td style="padding: 3px;" style='text-align: center;'>0.094609</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 3px;"><i>R</i><sup>2</sup></td>
+                            <td style="padding: 3px;" style='text-align: center;'>0.996696</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 3px;"><span
+                                    style='text-decoration: overline;'><i>R</i></span><sup>2</sup></td>
+                            <td style="padding: 3px;" style='text-align: center;'>0.996611</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 3px;">F statistic</td>
+                            <td style="padding: 3px;" style='text-align: center;'>11704.434016</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 3px;">Observations</td>
+                            <td style="padding: 3px;" style='text-align: center;'>200</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 3px;" colspan='2'>
+                                <hr style='margin: 0.5px'>
+                                <hr style='margin: 0.5px;'>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan='2' style='padding: 3px; text-align: left;'>
+                                <i>Note: </i>
+                                <span style='float: right;'>
+                                    <sup style="color: #f80053;">*</sup>p &lt; 0.1;
+                                    <sup style="color: #f80053;">**</sup>p &lt; 0.05;
+                                    <sup style="color: #f80053;">***</sup>p &lt; 0.01
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="plot-info">
+            <p>This analysis explores the relationship between advertising budgets across TV and radio channels and
+                their effect on sales, providing insights into how investments in these areas contribute to revenue. The
+                3D plot visualizes actual and predicted sales figures based on the optimal regression model (evaluated
+                using cross-validation), illustrating the interaction between TV and radio spending. The light blue
+                markers indicate observed sales data, while the darker surface represents predicted sales. Alongside,
+                the static 2D plot showcases the alignment between actual sales points and the regression model's
+                predictions for each predictor. Together, these visuals highlight the strength of the model in capturing
+                the influence of media budgets on sales outcomes, offering a clear guide for data-driven advertising
+                strategies.</p>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Nye Data Consulting. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+#asset-select {
+    display: flex;
+    flex-direction: column;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 5px;
+}
+
+#asset-select::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+}
+
+#asset-select::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+#asset-select::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+#asset-select::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 5px;
+}
+
+#legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 8px;
+}
+
+#legend text {
+    color: #333;
+    font-size: 14px;
+    margin-left: 15px;
+}
+
+#legend-container {
+    align-self: center;
+    background: #ccc;
+    border: 1px solid #b0b0b0;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), inset 1px 1px 3px rgba(255, 255, 255, 0.6);
+    height: 200px;
+    overflow-y: auto;
+    padding: 5px;
+}
+
+#legend-container::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+}
+
+#legend-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+#legend-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+#legend-container::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 5px;
+}
+
+.asset-option {
+    align-items: center;
+    background: linear-gradient(to right, #f9f9f9, #e0f7ff);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    padding: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%;
+}
+
+.asset-option label {
+    color: #333;
+    flex-grow: 1;
+    font-size: 0.9rem;
+}
+
+.asset-option:hover {
+    background-color: #d4edff;
+    transform: translateY(-1px);
+}
+
+.controls {
+    align-self: center;
+    background: #ccc;
+    border: 1px solid #b0b0b0;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), inset 1px 1px 3px rgba(255, 255, 255, 0.6);
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    transition: box-shadow 0.3s;
+    width: 220px;
+}
+
+.controls:hover {
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15), inset 1px 1px 4px rgba(255, 255, 255, 0.7);
+}
+
+.cross-cursor {
+    cursor: crosshair;
+}
+
+.plot-container {
+    background-color: #f2f4f8;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: center;
+}
+
+.tooltip {
+    background-color: #ffffff;
+    border: 1px solid #999;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), inset 1px 1px 5px rgba(255, 255, 255, 0.3);
+    color: #333;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    position: absolute;
+    z-index: 1000;
+}
