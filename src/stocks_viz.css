@@ -113,13 +113,6 @@
     cursor: crosshair;
 }
 
-.data-info {
-    color: #555;
-    font-size: 0.9rem;
-    margin: 10px 0;
-    text-align: center;
-}
-
 .plot-container {
     background-color: #f2f4f8;
     display: flex;

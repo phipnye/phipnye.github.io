@@ -117,13 +117,6 @@
     cursor: crosshair;
 }
 
-.data-info {
-    color: #555;
-    font-size: 0.9rem;
-    margin: 10px 0;
-    text-align: center;
-}
-
 .entity-option {
     align-items: center;
     background: linear-gradient(to right, #f9f9f9, #e0f7ff);
