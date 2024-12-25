@@ -33,13 +33,6 @@
     padding: 20px;
 }
 
-.plot-info {
-    color: #555;
-    font-size: 0.9rem;
-    margin: 10px 0;
-    text-align: center;
-}
-
 .display-container {
     align-items: center;
     display: flex;
@@ -110,6 +103,13 @@
     top: 5px;
 }
 
+.plot-info {
+    color: #555;
+    font-size: 0.9rem;
+    margin: 10px 0;
+    text-align: center;
+}
+
 .plot-row {
     display: flex;
     gap: 20px;
@@ -132,6 +132,76 @@
 
 .table-container table {
     font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+    .arrow {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 20px 10px;
+        width: 100%;
+    }
+
+    .display-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .image-container {
+        flex: 0 0 100%;
+    }
+
+    .logo {
+        display: block;
+        margin: 0 auto;
+        max-width: 120px;
+        position: static;
+    }
+
+    .plot-row {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .promotion-text {
+        font-size: 1em;
+        margin: 20px 0;
+    }
+
+    body {
+        padding: 0 10px;
+    }
+
+    footer {
+        font-size: 0.9rem;
+        padding: 10px 5%;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+        font-size: 1rem;
+    }
+
+    header {
+        padding: 10px 5%;
+        text-align: left;
+    }
+
+    nav ul {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
 }
 
 a {
