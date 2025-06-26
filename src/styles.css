@@ -33,6 +33,23 @@
     padding: 20px;
 }
 
+.cta-button {
+    background-color: #406181;
+    border-radius: 6px;
+    color: white;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.cta-button:hover {
+    background-color: #005fa3;
+}
+
 .display-container {
     align-items: center;
     display: flex;
@@ -96,11 +113,11 @@
 }
 
 .logo {
-    height: auto;
-    max-width: 150px;
+    height: 40%;
+    width: auto;
     position: absolute;
     right: 20px;
-    top: 5px;
+    top: 40px;
 }
 
 .plot-info {
