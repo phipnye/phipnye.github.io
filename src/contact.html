@@ -103,7 +103,7 @@
             <!-- Optional file upload -->
             <label for="attachment">Attach a file (optional):</label>
             <input type="file" name="attachment" id="attachment"
-                accept=".pdf,.doc,.docx,.xls,.xlsx,.txt,.png,.jpg,.jpeg">
+                accept=".csv,.pdf,.doc,.docx,.xls,.xlsx,.txt,.png,.jpg,.jpeg">
             <!-- Legal agreement -->
             <label style="display: block; margin-top: 1em; font-size: 0.9em; line-height: 1.5;">
                 <input type="checkbox" name="legal_agreement" required>
@@ -114,11 +114,29 @@
                 messages. You may opt out of future communication at any time.
             </label>
 
-            <input type="hidden" name="_redirect" value="https://www.nyedata.com/thank-you.html">
+            <input type="hidden" name="_redirect" value="https://www.nyedata.com/src/thank-you.html">
             <div class="submit-button-holder">
                 <button type="submit">Send</button>
             </div>
         </form>
+
+        <script>
+            // run after the form is in the DOM
+            document.getElementById("contact-form").addEventListener("submit", function (e) {
+                const fileInput = document.getElementById("attachment");
+                if (fileInput && fileInput.files.length) {
+                    const file = fileInput.files[0];
+                    const maxSizeMB = 100;                 // 100 MB limit
+                    const maxSize = maxSizeMB * 1024 * 1024;
+
+                    if (file.size > maxSize) {
+                        e.preventDefault();                  // block form submit
+                        alert(`The selected file is larger than ${maxSizeMB} MB. Please choose a smaller file.`);
+                        return false;
+                    }
+                }
+            });
+        </script>
 
         <p>Thank you for considering Nye Data Consulting. We look forward to connecting with you soon!</p>
     </main>
