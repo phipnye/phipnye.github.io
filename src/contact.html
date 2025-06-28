@@ -95,7 +95,8 @@
             quickly.</p>
 
         <h3>Send Us a Message</h3>
-        <form action="https://usebasin.com/f/7ef05987a99e" method="POST" enctype="multipart/form-data">
+        <form id="contact-form" action="https://usebasin.com/f/7ef05987a99e" method="POST"
+            enctype="multipart/form-data">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
                 title="Please enter a valid email address">
@@ -120,17 +121,20 @@
             </div>
         </form>
 
+        <!-- 100 MB client-side file-size guard -->
         <script>
             // run after the form is in the DOM
             document.getElementById("contact-form").addEventListener("submit", function (e) {
                 const fileInput = document.getElementById("attachment");
                 if (fileInput && fileInput.files.length) {
                     const file = fileInput.files[0];
-                    const maxSizeMB = 100;                 // 100 MB limit
-                    const maxSize = maxSizeMB * 1024 * 1024;
+
+                    // 100 MB limit
+                    const maxSizeMB = 100;
+                    const maxSize = 104857600;
 
                     if (file.size > maxSize) {
-                        e.preventDefault();                  // block form submit
+                        e.preventDefault(); // block form submit
                         alert(`The selected file is larger than ${maxSizeMB} MB. Please choose a smaller file.`);
                         return false;
                     }
