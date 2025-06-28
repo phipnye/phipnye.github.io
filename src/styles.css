@@ -50,6 +50,11 @@
     background-color: #005fa3;
 }
 
+.cta-button-holder {
+    margin: 10px;
+    text-align: center;
+}
+
 .display-container {
     align-items: center;
     display: flex;
@@ -145,6 +150,11 @@
 .promotion-text {
     font-size: 1.2em;
     margin: 30px;
+}
+
+.submit-button-holder {
+    margin: 20px;
+    text-align: center;
 }
 
 .table-container table {

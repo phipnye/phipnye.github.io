@@ -4,8 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Nye Data Consulting</title>
+    <meta name="author" content="Nye Data Consulting">
+    <title>Contact Nye Data Consulting | Start Your Data Project</title>
     <link rel="stylesheet" href="/src/styles.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="theme-color" content="#34495e">
+
+    <!-- ========== SEO: CONTACT ========== -->
+    <meta name="description"
+        content="Need expert data support? Contact Nye Data Consulting—fast, clear responses within hours. Reach out to start your analysis, modeling, or automation project today.">
+    <meta name="keywords"
+        content="contact data consultant, statistical modeling inquiry, legal analytics support, start data project, custom data solutions, data visualization help">
+    <link rel="canonical" href="https://www.nyedata.com/src/contact.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.nyedata.com/src/contact.html">
+    <meta property="og:title" content="Contact Nye Data Consulting">
+    <meta property="og:description"
+        content="Have a project or question? We respond fast—usually within a few hours. Reach out now.">
+    <meta property="og:image"
+        content="https://www.nyedata.com/img/nye-data-consulting-high-resolution-logo-transparent.svg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Nye Data Consulting">
+    <meta name="twitter:description" content="Start your data project today. Same-day response from senior experts.">
+    <meta name="twitter:image"
+        content="https://www.nyedata.com/img/nye-data-consulting-high-resolution-logo-transparent.svg">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "url": "https://www.nyedata.com/src/contact.html",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.nyedata.com/src/contact.html"
+      },
+      "about": {
+        "@type": "Organization",
+        "name": "Nye Data Consulting",
+        "url": "https://www.nyedata.com",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "info@nyedata.com",
+          "areaServed": "US"
+        }
+      }
+    }
+    </script>
 </head>
 
 <body>
@@ -39,12 +95,29 @@
             quickly.</p>
 
         <h3>Send Us a Message</h3>
-        <form action="https://formsubmit.io/send/info@nyedata.com" method="POST">
+        <form action="https://usebasin.com/f/7ef05987a99e" method="POST" enctype="multipart/form-data">
             <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="email" name="email" placeholder="Your Email" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                title="Please enter a valid email address">
             <textarea name="message" placeholder="Your Message" required></textarea>
+            <!-- Optional file upload -->
+            <label for="attachment">Attach a file (optional):</label>
+            <input type="file" name="attachment" id="attachment"
+                accept=".pdf,.doc,.docx,.xls,.xlsx,.txt,.png,.jpg,.jpeg">
+            <!-- Legal agreement -->
+            <label style="display: block; margin-top: 1em; font-size: 0.9em; line-height: 1.5;">
+                <input type="checkbox" name="legal_agreement" required>
+                By submitting this form, you confirm that you have read and agree to our
+                <a href="/privacy.html" target="_blank">Privacy Policy</a> and
+                <a href="/terms.html" target="_blank">Terms of Use</a>. You also provide your express consent to be
+                contacted by Nye Data Consulting at the email address you provided, including through automated
+                messages. You may opt out of future communication at any time.
+            </label>
+
             <input type="hidden" name="_redirect" value="https://www.nyedata.com/thank-you.html">
-            <button type="submit">Send</button>
+            <div class="submit-button-holder">
+                <button type="submit">Send</button>
+            </div>
         </form>
 
         <p>Thank you for considering Nye Data Consulting. We look forward to connecting with you soon!</p>
@@ -53,6 +126,8 @@
     <footer>
         <p>&copy; 2025 Nye Data Consulting. All rights reserved.</p>
     </footer>
+
+    <script data-goatcounter="https://nyedata.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 
 </html>
