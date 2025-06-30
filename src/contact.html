@@ -85,7 +85,21 @@
         <p>We're here to help you unlock the potential of your data! If you have any questions, project inquiries, or
             would like to explore how Nye Data Consulting can support you, we'd love to hear from you!</p>
 
-        <p><strong>Email:</strong> <a href="mailto:info@nyedata.com">info@nyedata.com</a></p>
+        <!-- Visible to humans; rebuilt by JS -->
+        <strong>Email:</strong> <span id="nyedata-email">(loading…)</span>
+
+        <script>
+            /* Rebuild mailto: link client-side */
+            (function () {
+                const user = "info";
+                const domain = "nyedata.com";
+                const anchor = document.createElement("a");
+                anchor.href = "mailto:" + user + "@" + domain;
+                anchor.textContent = user + "@" + domain;
+                document.getElementById("nyedata-email").replaceWith(anchor);
+            })();
+        </script>
+
         <p><strong>Response Time:</strong> We aim to respond to all inquiries within a few hours to ensure prompt
             service and support. We're responsive—reach out using the form below or by email. Let us know a bit about
             your project—or just tell us a good time to chat.</p>
@@ -102,9 +116,14 @@
                 title="Please enter a valid email address">
             <textarea name="message" placeholder="Your Message" required></textarea>
             <!-- Optional file upload -->
-            <label for="attachment">Attach a file (optional):</label>
+            <label for="attachment">
+                Attach a file (optional)<br>
+                <span style="font-size: 0.9em; color: #555;">
+                    Max size: 100MB. Accepted formats: PDF, Word, Excel, CSV, TXT, JPG, PNG.
+                </span>
+            </label>
             <input type="file" name="attachment" id="attachment"
-                accept=".csv,.pdf,.doc,.docx,.xls,.xlsx,.txt,.png,.jpg,.jpeg">
+                accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.jpg,.jpeg,.png">
             <!-- Legal agreement -->
             <label style="display: block; margin-top: 1em; font-size: 0.9em; line-height: 1.5;">
                 <input type="checkbox" name="legal_agreement" required>
